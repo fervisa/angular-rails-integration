@@ -1,5 +1,5 @@
 angular.module('demoApp').controller 'homeCtrl', ['$scope', ($scope) ->
-  $scope.elements = 
+  $scope.elements =
     [
       { name: 'element 1', value: true },
       { name: 'element 2', value: false },
