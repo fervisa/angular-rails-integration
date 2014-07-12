@@ -1,0 +1,12 @@
+%script{ type: 'text/ng-template', id: 'users/index.html' }
+  %table
+    %thead
+      %tr
+        %th Name
+        %th Value
+        %th Actions
+    %tbody{ 'ng-repeat' => 'user in users' }
+      %tr
+        %td {{ user.firstName }}
+        %td {{ user.lastName }}
+        %td

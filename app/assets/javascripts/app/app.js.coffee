@@ -6,8 +6,8 @@ angular.module('demoApp')
       .when '/',
         templateUrl: 'home/index.html'
         controller: 'homeCtrl'
-      .when '/persons',
-        templateUrl: 'persons/index.html'
-        controller: 'personsCtrl'
+      .when '/users',
+        templateUrl: 'users/index.html'
+        controller: 'usersCtrl'
       .otherwise
         redirectTo: '/'
