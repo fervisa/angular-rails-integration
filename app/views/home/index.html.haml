@@ -1,5 +1,14 @@
+%ul
+  %li
+    %a{ href: '/#/' }
+      Home
+  %li
+    %a{ href: '/#/persons' }
+      Persons
+
 %h1 Home#index
 
 %div{ 'ng-app' => 'demoApp', 'ng-view' => true }
 
   = render 'templates/home/index'
+  = render 'templates/persons/index'
