@@ -1,1 +1,32 @@
 %h1 Home#index
+
+%div{ 'ng-app' => 'demoApp', 'ng-controller' => 'homeCtrl' }
+
+  %p
+    Elements: {{ elements | json }}
+
+  %p
+    Selected element: {{ selectedElement | json }}
+
+  %table
+    %thead
+      %tr
+        %th Name
+        %th Value
+        %th Actions
+    %tbody{ 'ng-repeat' => 'element in elements', 'ng-switch' => true, on: 'selected(element)' }
+      %tr{ 'ng-class' => '{ selected: selected(element) }' }
+        %td {{ element.name }}
+        %td {{ element.value }}
+        %td
+          %a{ href: true, 'ng-click' => 'edit(element)' }
+            Select
+      %tr{ 'ng-switch-when' => 'true' }
+        %td{ colspan: 3 }
+          %form{ name: 'elementForm' }
+            %input{ type: 'text', name: 'name', 'ng-model' => 'element.name' }
+            %br
+            %input{ type: 'checkbox', name: 'value', 'ng-model' => 'element.value' }
+            Checked?
+          %a{ href: true, 'ng-click' => 'close()' }
+            Close
