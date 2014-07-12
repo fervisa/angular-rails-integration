@@ -3,5 +3,5 @@ angular.module('demoApp').controller 'usersCtrl', ['$scope', 'User', ($scope, Us
 ]
 
 angular.module('demoApp').factory 'User', ['$resource', ($resource) ->
-  $resource '/users/:id'
+  $resource '/users/:id.json'
 ]
