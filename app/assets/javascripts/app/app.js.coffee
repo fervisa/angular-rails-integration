@@ -1,7 +1,7 @@
 angular.module('demoApp', ['ngRoute', 'ngResource'])
 
 angular.module('demoApp')
-  .config ( $routeProvider ) ->
+  .config ['$routeProvider', ($routeProvider) ->
     $routeProvider
       .when '/',
         templateUrl: 'home/index.html'
@@ -11,3 +11,4 @@ angular.module('demoApp')
         controller: 'usersCtrl'
       .otherwise
         redirectTo: '/'
+]
