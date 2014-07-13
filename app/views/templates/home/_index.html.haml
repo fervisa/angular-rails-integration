@@ -19,7 +19,7 @@
     %tbody{ 'ng-repeat' => 'element in elementsFilter = ( elements | filter: busca )', 'ng-switch' => true, on: 'selected(element)' }
       %tr{ 'ng-class' => '{ selected: selected(element) }' }
         %td {{ element.name }}
-        %td {{ element.value }}
+        %td {{ element.value | boolean }}
         %td
           %a{ href: true, 'ng-click' => 'edit(element)' }
             Select
