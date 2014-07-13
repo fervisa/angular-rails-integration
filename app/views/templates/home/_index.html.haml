@@ -6,13 +6,17 @@
   %p
     Selected element: {{ selectedElement | json }}
 
+  %div
+    = label_tag :name, 'Name'
+    = text_field_tag :name, '', { 'ng-model' => 'busca.name' }
+
   %table
     %thead
       %tr
         %th Name
         %th Value
         %th Actions
-    %tbody{ 'ng-repeat' => 'element in elements', 'ng-switch' => true, on: 'selected(element)' }
+    %tbody{ 'ng-repeat' => 'element in elementsFilter = ( elements | filter: busca )', 'ng-switch' => true, on: 'selected(element)' }
       %tr{ 'ng-class' => '{ selected: selected(element) }' }
         %td {{ element.name }}
         %td {{ element.value }}
@@ -28,3 +32,5 @@
             Checked?
           %a{ href: true, 'ng-click' => 'close()' }
             Close
+  %div{ 'ng-hide' => 'elementsFilter.length' }
+    No matches found
